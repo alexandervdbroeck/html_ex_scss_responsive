@@ -1,0 +1,107 @@
+/* Alexander Van den Broeck Eindexamen */
+/* css bij flex*/
+/* http://meyerweb.com/eric/tools/css/reset/  v2.0 | 20110126 License: none (public domain)
+*/
+@import "https://fonts.googleapis.com/css?family=Roboto+Slab:400,500,700,900&display=swap";
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+body { line-height: 1; }
+
+nav ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+/*eigen css----------*/
+.list-unstyled { list-style: none; margin: 0; padding: 0; }
+
+img { display: block; }
+
+* { box-sizing: border-box; }
+
+.floatfix { clear: both; overflow: hidden; zoom: 1; overflow: visible; }
+
+/* aanpassen overgang van de a elementen*/
+a { transition-property: background; transition-duration: 500ms; }
+
+/* Variablen   bij examen Alexander Van den Broeck-----------------*/
+/* Algemene stijlen----------------------------------------------------------*/
+p, a, h1, h2 { font: 400 100%/1.5 'Roboto Slab', Arial, sans-serif; }
+
+main { background: #2B363D; }
+
+/*algemene stijlen breedscherm-------------------------------------------------*/
+@media screen and (min-width: 1140px) { .container { width: 1140px; margin: 0 auto; transition: all 1000ms; } }
+/*---------------header stijlen---------------------------------------------------*/
+header.mainheader { z-index: 1; height: 100vh; background: url(../images/header-bg-tablet.jpg) center/cover no-repeat fixed; display: flex; flex-direction: column-reverse; }
+header.mainheader .header-article { max-width: 350px; padding: 30px; margin: 30px; background: #ff9933; }
+header.mainheader .header-article p { color: white; font-size: 2em; margin-bottom: 30px; }
+header.mainheader .header-article a { text-decoration: none; color: white; padding: 10px; border: solid 1px white; border-radius: 3px; text-transform: uppercase; }
+header.mainheader .header-article a:hover { border: 3px solid white; }
+
+/* headerstijlen breedscherm---------------------------------------------------------------------*/
+@media screen and (min-width: 1140px) { header.mainheader { background: url(../images/header-bg.jpg) center/cover no-repeat fixed; } }
+/* --------------------Navigatie stijlen------(breedscherm)----------------------------------------*/
+@media screen and (min-width: 1140px) { .small-screen-menu { display: none; }
+  .menu { position: fixed; top: -100px; }
+  .mainnav { z-index: 1; position: absolute; top: 50px; width: 100%; background: white; }
+  .mainnav .logo { display: flex; align-items: center; }
+  .mainnav .logo span { padding: 28px; color: #ff9933; }
+  .mainnav .logo a { color: black; text-decoration: none; display: block; font-size: 2em; }
+  .mainnav .navholder { z-index: 1; display: flex; justify-content: space-between; }
+  .mainnav .navholder .navmenu li { display: inline-block; }
+  .mainnav .navholder .navmenu li .actief { background: #EFEFEF; }
+  .mainnav .navholder .navmenu li a { transition: all 600ms ease-in-out; color: black; text-decoration: none; display: block; padding: 2em 2em; margin-left: -4px; }
+  .mainnav .navholder .navmenu li a:hover { background: #EFEFEF; } }
+/*----------navigatie smal scherm--------------------------------------------*/
+@media screen and (max-width: 1140px) { .menu { z-index: 999; position: fixed; top: 68px; right: 50px; color: black; font-size: 2em; }
+  .navmenu { display: none; }
+  .mainnav { z-index: 1; position: absolute; top: 50px; width: 100%; background: white; }
+  .mainnav .logo { display: flex; align-items: center; }
+  .mainnav .logo span { padding: 28px; color: #ff9933; }
+  .mainnav .logo a { color: black; text-decoration: none; display: block; font-size: 2em; }
+  /*--------------Menu sluiten over heel smal scherm breedte-----------------------------------------*/
+  .close-menu { position: fixed; z-index: -1; background: black; display: flex; width: 100%; height: 100%; opacity: 0; transition: all 1000ms ease-in-out; transition-timing-function: ease-in-out; transition-timing-function: cubic-bezier(0.42, 1, 0.58, 1); }
+  .close-menu .smart-navmenu a { opacity: 0; } }
+/*---------------menu openen over heel smal scherm breedte-------------------------------------*/
+.open-menu { position: fixed; z-index: 900; background: black; display: flex; width: 100%; height: 100%; justify-content: center; align-items: center; opacity: 0.9; transition: all 1000ms; transition-timing-function: ease-in-out; transition-timing-function: cubic-bezier(0.42, 1, 0.58, 1); }
+.open-menu .smart-navmenu a { opacity: 1; display: block; text-decoration: none; color: white; text-align: center; font-size: 1.5em; transition: 900ms all ease-in-out; }
+
+/*-------------stijling van de main--------------------------------------*/
+.main-figure { width: 100%; position: relative; }
+.main-figure img { width: 100%; }
+.main-figure figcaption { width: 100%; height: 100%; position: absolute; top: 0; display: flex; justify-content: center; align-items: center; color: white; transition: all 700ms ease-in-out; opacity: 0; }
+.main-figure figcaption:hover { opacity: 1; }
+.main-figure figcaption a { display: block; text-decoration: none; font-size: 1.7rem; font-weight: 700; color: white; transition: all 500ms ease-in-out; }
+.main-figure figcaption a:hover { font-size: 2rem; }
+
+/* stijling main met breedscherm----------*/
+@media screen and (min-width: 1140px) { main { display: flex; } }
+/*----------Footer Stijlen-----------------------------------------------------*/
+footer.mainfooter { background: #2B363D; }
+footer.mainfooter .div-main-footer { padding: 30px; }
+footer.mainfooter .div-main-footer h2 { font-size: 1.5em; color: white; padding: 30px 0; }
+footer.mainfooter .div-main-footer p { color: grey; }
+footer.mainfooter .div-main-footer a { color: grey; text-decoration: none; }
+footer.mainfooter .div-main-footer .ons-adres span { color: white; padding-right: 1em; }
+footer.mainfooter .div-main-footer li { padding: 10px 0; }
+footer.mainfooter .div-main-footer .main-contact-form input[type=text], footer.mainfooter .div-main-footer .main-contact-form textarea, footer.mainfooter .div-main-footer .main-contact-form input[type=email] { border: none; color: grey; font: 400 100%/1.5 'Roboto Slab', Arial, sans-serif; width: 100%; padding: 8px 5px; background: #151B27; }
+footer.mainfooter .div-main-footer .main-contact-form textarea { height: 150px; }
+footer.mainfooter .div-main-footer .main-contact-form input[type=submit] { background: #ff9933; color: white; font: 400 100%/1.5 'Roboto Slab', Arial, sans-serif; border: none; border-radius: 5px; padding: 10px 15px; margin: 20px 0; }
+footer.mainfooter .div-main-footer .main-contact-form input[type=submit]:hover { cursor: pointer; }
+footer.mainfooter .div-main-footer .social-media { display: flex; flex-direction: column; align-items: center; border-top: solid 1px grey; }
+footer.mainfooter .div-main-footer .social-media ul li { display: inline; }
+footer.mainfooter .div-main-footer .social-media ul li a { padding: 20px 10px; display: inline-block; }
+
+/*------------------Footer stijlen-----------------------------------------------------------------*/
+@media screen and (min-width: 1140px) { footer.mainfooter .div-main-footer { display: grid; grid-template-rows: auto auto; grid-template-columns: 1fr 1fr 1fr 1fr; grid-gap: 50px; }
+  footer.mainfooter .social-media { grid-row: 2; grid-column: 1/5; } }
+
+/*# sourceMappingURL=opmaak.css.map */

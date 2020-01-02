@@ -1,0 +1,361 @@
+/* Alexander Van den Broeck Eindexamen */
+
+@import   "partials/reset", "partials/variables",
+          "https://fonts.googleapis.com/css?family=Roboto+Slab:400,500,700,900&display=swap",
+          "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+/* Algemene stijlen----------------------------------------------------------*/
+
+p,a,h1,h2{
+  font: 400 100%/1.5 'Roboto Slab', Arial, sans-serif;
+}
+main{
+  background: $achergrond;
+}
+
+/*algemene stijlen breedscherm-------------------------------------------------*/
+
+@media screen and (min-width:$breedscherm){
+  .container {
+    width: 1140px;
+    margin: 0 auto;
+    transition: all 1000ms;
+  }
+  }
+
+
+/*---------------header stijlen---------------------------------------------------*/
+
+header.mainheader{
+    z-index: 1;
+   height: 100vh;
+   background: url(../images/header-bg-tablet.jpg) center/cover no-repeat fixed;
+   display: flex;
+   flex-direction: column-reverse;
+
+  .header-article{
+    max-width: 350px;
+    padding: $standaard_padding;
+    margin: 30px;
+    background:$accentkleur;
+
+    p{
+      color: $white;
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+    a{
+      text-decoration: none;
+      color: $white;
+      padding: $kleine_padding;
+      border: solid 1px $white;
+      border-radius: 3px;
+      text-transform: uppercase;
+      &:hover{
+        border: 3px solid $white;
+      }
+    }
+  }
+
+ }
+
+/* headerstijlen breedscherm---------------------------------------------------------------------*/
+
+@media screen and (min-width:$breedscherm){
+
+  header.mainheader{
+    background: url(../images/header-bg.jpg) center/cover no-repeat fixed;
+
+
+  }
+
+}
+
+/* --------------------Navigatie stijlen------(breedscherm)----------------------------------------*/
+
+@media screen and (min-width:$breedscherm){
+  .small-screen-menu{
+    display: none;
+  }
+  .menu{
+    position: fixed;
+    top:-100px;
+  }
+  .mainnav{
+    z-index: 1;
+    position: absolute;
+    top:50px;
+    width: 100%;
+    background: $white;
+    .logo{
+      display: flex;
+      align-items: center;
+
+      span{
+        padding: 28px;
+        color: $accentkleur;
+      }
+      a{
+        color: $zwart;
+        text-decoration: none;
+        display: block;
+        font-size: 2em;
+      }
+    }
+    .navholder{
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+
+      .navmenu li{
+        display:inline-block ;
+        .actief{
+          background: $licht_grijs;
+        }
+        a{
+          transition: all 600ms ease-in-out;
+          color: $zwart;
+          text-decoration: none;
+          display: block;
+          padding: 2em 2em;
+          margin-left: -4px;
+          &:hover{
+            background: $licht_grijs;
+          }
+        }
+      }
+    }
+
+  }
+}
+/*----------navigatie smal scherm--------------------------------------------*/
+
+
+@media screen and (max-width:$breedscherm){
+  .menu{
+    z-index: 999;
+    position: fixed;
+    top:68px;
+    right: 50px;
+    color:$zwart;
+    font-size: 2em;
+  }
+  .navmenu{
+    display: none;
+  }
+  .mainnav{
+   z-index:1;
+   position: absolute;
+   top:50px;
+   width: 100%;
+   background: $white;
+   .logo{
+     display: flex;
+     align-items: center;
+
+     span{
+       padding: 28px;
+       color: $accentkleur;
+     }
+     a{
+       color: $zwart;
+       text-decoration: none;
+       display: block;
+       font-size: 2em;
+
+     } }
+
+}
+/*--------------Menu sluiten over heel smal scherm breedte-----------------------------------------*/
+  .close-menu{
+    position: fixed;
+    z-index: -1;
+    background: black;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 1000ms ease-in-out;
+    transition-timing-function: ease-in-out;
+    transition-timing-function: cubic-bezier(0.42, 1, 0.58, 1);
+    .smart-navmenu{
+      a{
+        opacity: 0;
+      }
+
+    }
+    }
+
+}
+/*---------------menu openen over heel smal scherm breedte-------------------------------------*/
+.open-menu{
+  position: fixed;
+  z-index: 900;
+  background: black;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+  transition: all 1000ms;
+  transition-timing-function: ease-in-out;
+  transition-timing-function: cubic-bezier(0.42, 1, 0.58, 1);
+  .smart-navmenu{
+    a{
+      opacity: 1;
+      display: block;
+      text-decoration: none;
+      color: $white;
+      text-align: center;
+      font-size: 1.5em;
+      transition: 900ms all ease-in-out;
+    }
+
+  }
+
+}
+
+
+
+
+/*-------------stijling van de main--------------------------------------*/
+
+
+.main-figure{
+  width:100%;
+  position: relative;
+  img{
+
+    width: 100%;
+  }
+  figcaption{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: all 700ms ease-in-out;
+    opacity: 0;
+    &:hover{
+      opacity: 1;
+    }
+    a{
+      display: block;
+      text-decoration: none;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: white;
+      transition: all 500ms ease-in-out;
+      &:hover{
+        font-size: 2rem;
+      }
+    }
+  }
+
+}
+
+/* stijling main met breedscherm----------*/
+
+
+@media screen and (min-width:$breedscherm){
+  main{
+    display: flex;
+  }
+}
+
+
+/*----------Footer Stijlen-----------------------------------------------------*/
+
+footer.mainfooter{
+  background: $achergrond;
+  .div-main-footer{
+    padding: $standaard_padding;
+    h2{
+      font-size: 1.5em;
+      color: $white;
+      padding: 30px 0;
+     }
+    p{
+      color: $grijstext;
+    }
+    a{
+      color: $grijstext;
+      text-decoration: none;
+    }
+    .ons-adres span {
+      color:$white;
+      padding-right: 1em;
+    }
+    li{
+      padding: 10px 0;
+    }
+
+    .main-contact-form input[type=text],
+    .main-contact-form textarea,
+    .main-contact-form input[type=email] {
+        border: none;
+        color: $grijstext;
+       font: 400 100%/1.5 'Roboto Slab', Arial, sans-serif;
+        width: 100%;
+        padding: 8px 5px;
+        background:$donkere_achtergrond;
+
+
+    }
+    .main-contact-form textarea{
+      height: 150px;
+    }
+
+    .main-contact-form input[type=submit]{
+      background: $accentkleur;
+      color: $white;
+      font: 400 100%/1.5 'Roboto Slab', Arial, sans-serif;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      margin: 20px 0;
+      &:hover{
+        cursor: pointer;
+      }
+
+    }
+    .social-media{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-top: solid 1px $grijstext;
+      ul li{
+        display: inline;
+        a{
+          padding: 20px 10px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+
+  }
+
+/*------------------Footer stijlen-----------------------------------------------------------------*/
+@media screen and (min-width:$breedscherm){
+  footer.mainfooter{
+    .div-main-footer{
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 50px;
+    }
+  .social-media{
+
+    grid-row: 2;
+    grid-column: 1/5;
+
+  }
+  }
+}
+

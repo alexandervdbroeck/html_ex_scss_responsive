@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head lang="nl">
+    <meta charset="UTF-8">
+    <title>Examen Van den Broeck Alexander-architectuur</title>
+    <link href="css/opmaak.css" rel="stylesheet">
+    <meta name="viewport"  content="width=device-width, initial-scale=1">
+</head>
+<body>
+<!-- hamburger icoontje om het navigatie menu te openen op small screen-->
+
+<a href="#menu" title="" class="menu">
+    <span class="fa fa-reorder"></span>
+</a>
+
+<!---------NAV-Menu voor klein scherm (verborgen als op groog scherm)(display:none)--------------->
+
+<nav class="close-menu small-screen-menu">
+        <ul class="list-unstyled smart-navmenu  ">
+            <li><a href="#" title="" class="actief">home</a></li>
+            <li><a href="#" title="">projecten</a></li>
+            <li><a href="#ons" title="">over ons</a></li>
+            <li><a href="#contact" title="">contact</a></li>
+        </ul>
+    </div>
+</nav>      <!--flex-->
+
+<!-- ---------Nav menu voor groot scherm (verborgen als op klein scherm)(display:none)----------->
+
+<nav class="mainnav ">
+    <div class="navholder container"><!--container-->
+    <div class=" logo "><a href="#" title="" >
+        <span class="fa fa-university" id="mainlogo"></span>architect</a>
+    </div>
+    <ul class="list-unstyled navmenu  ">
+        <li><a href="#" title="" class="actief">HOME</a></li>
+        <li><a href="#" title="">projecten</a></li>
+        <li><a href="#ons" title="">over ons</a></li>
+        <li><a href="#contact" title="">contact</a></li>
+    </ul>
+    </div>
+</nav>      <!--flex-->
+
+<header class="mainheader ">
+    <div class="container">
+        <article class="header-article container">
+            <p class="">Architectuur is een visuele kunst, en onze gebouwen spreken voor zich</p>
+            <a href="#" title="#">meer info</a>
+        </article>
+    </div>
+</header>       <!--mainheader flex-->
+
+<main>
+    <figure class="main-figure">
+        <img src="images/atomium.jpg" alt="">
+        <figcaption><a href="#" title="">Atomium Brussel</a></figcaption>
+    </figure>
+    <figure class="main-figure">
+        <img src="images/toureiffel.jpg" alt="">
+        <figcaption><a href="#" title="">Eifeltoren Parijs</a></figcaption>
+    </figure>
+    <figure class="main-figure">
+        <img src="images/guggenheim.jpg" alt="">
+        <figcaption><a href="#" title="">Guggenheim New York</a></figcaption>
+    </figure>
+</main>         <!--bij groot scherm => flex-->
+
+<!----------------------- container footer-  bij groot scherm=> GRID----------------------------------------->
+
+<footer class="mainfooter ">
+    <div class="div-main-footer container">
+        <article class="over-ons" id="ons">         <!--over ons -->
+            <h2>Over ons</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nam
+                nesciunt sed tempore? Dicta eaque eligendi eos error, est eum facilis
+                fugiat iure magni minima perferendis quibusdam quos ratione repellendus.</p>
+        </article>
+        <article class="onze-diensten">                 <!--Onze diensten-->
+            <h2>Onze diensten</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nam
+                nesciunt sed tempore? Dicta eaque eligendi eos error, est eum facilis
+                fugiat iure magni minima perferendis quibusdam quos ratione repellendus.</p>
+        </article>
+        <article class="ons-adres">                         <!--Ons adres-->
+            <h2>Ons Adres</h2>
+            <ul class="ons-adres list-unstyled">
+                <li><span class="fa fa-map-marker"></span>
+                    <a href="#" title=""> Havenlaan 86C, Brussel</a></li>
+                <li>
+                    <span class="fa fa-phone"></span>
+                    <a href="tel:+3224261222" title="">+3224261222</a></li>
+                <li>
+                    <span class="fa fa-envelope-o"></span>
+                    <a href="mailto:info@architectuur.design" title="">info@architectuur.design</a></li>
+                <li>
+                    <span class="fa fa-globe"></span>
+                    <a href="https://www.architectuur.design" title="">architectuur.design</a></li>
+            </ul>
+        </article>
+
+        <form class="main-contact-form" action="#">         <!--Contact form-->
+            <ul class="list-unstyled">
+                <h2 id="contact">Contacteer Ons</h2>
+                <li><input type="text" id="name" name="naam" placeholder="naam" required tabindex="1"></li>
+                <li><input type="email" id="e-mail" name="email" placeholder="email" required tabindex="2"></li>
+                <li>
+                    <textarea id="vragen" name="vragen" placeholder="Vragen..." required tabindex="3"></textarea>
+                </li>
+                <li> <input type="submit" value="Verzend bericht"></li>
+            </ul>
+        </form>
+
+        <!---------------------------social media------------------------------------>
+        <div class="social-media">
+            <ul class="list-unstyled social">
+                <li>
+                    <a href="#"title="">
+                        <span class="fa fa-twitter"></span>
+                        <span class="sr-only">Twitter</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"title="">
+                        <span class="fa fa-instagram"></span>
+                        <span class="sr-only">instagram</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"title="">
+                        <span class="fa fa-facebook"></span>
+                        <span class="sr-only">Face-book</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"title="">
+                        <span class="fa fa-google-plus"></span>
+                        <span class="sr-only">google-plus</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"title="">
+                        <span class="fa fa-youtube"></span>
+                        <span class="sr-only">Youtube</span>
+                    </a>
+                </li>
+            </ul>
+            <p>&copy; 2017 architectuur-Syntra. Alle rechten Voorbehouden</p>
+        </div>          <!--FLex-->
+    </div>      <!--Bij groot scher => GRID-->
+<!--    container footer-->
+</footer>
+
+        <!--   Jquery lib    -->
+        <script
+                src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous"></script>
+        <!-- Eigen scripts-->
+        <script src="js/main.js"></script>
+
+
+</body>
+</html>
+
